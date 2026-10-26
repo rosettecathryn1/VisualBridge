@@ -1,0 +1,640 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.landing-page {
+  --landing-bg: #05070d;
+  --landing-text: #f4f5ff;
+  --landing-muted: #9298ac;
+
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(43, 62, 132, .20), transparent 42%),
+    var(--landing-bg);
+  color: var(--landing-text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.landing-page *,
+.landing-page *::before,
+.landing-page *::after {
+  box-sizing: border-box;
+}
+
+.landing-glow {
+  position: absolute;
+  z-index: -1;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: .15;
+  pointer-events: none;
+}
+
+.landing-glow-one {
+  top: 12%;
+  right: 8%;
+  background: #526dff;
+}
+
+.landing-glow-two {
+  bottom: -25%;
+  left: 12%;
+  background: #00d9ff;
+  opacity: .08;
+}
+
+.landing-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 82px;
+  padding: 18px 5.5%;
+  border-bottom: 1px solid rgba(255, 255, 255, .075);
+}
+
+.landing-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #f6f7ff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid rgba(111, 219, 255, .65);
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(54, 179, 255, .22), rgba(94, 82, 255, .15));
+  color: #8de8ff;
+  font-size: 20px;
+}
+
+.logo-accent {
+  color: #8bdfff;
+}
+
+.landing-header-note,
+.landing-footer {
+  color: var(--landing-muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.header-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .035);
+  color: white;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .25s, border-color .25s;
+}
+
+.header-enter:hover {
+  border-color: #68dfff;
+  background: rgba(72, 199, 255, .1);
+}
+
+.header-enter span {
+  color: #8de8ff;
+}
+
+.landing-hero {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  align-items: center;
+  width: min(1500px, 100%);
+  min-height: calc(100vh - 139px);
+  margin: 0 auto;
+  padding: 28px 4.5% 35px;
+}
+
+.landing-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 470px;
+  padding: 20px 0;
+  animation: copy-appear .9s ease both;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: #9de9ff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.status-dot,
+.label-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #73e6ff;
+  box-shadow: 0 0 15px #73e6ff;
+}
+
+.landing-copy h1 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(52px, 6.3vw, 88px);
+  font-weight: 500;
+  line-height: .99;
+  letter-spacing: -4.5px;
+}
+
+.landing-copy h1 span {
+  display: inline-block;
+  padding-right: 12px;
+  background: linear-gradient(100deg, #8be7ff 4%, #8ca3ff 54%, #c6a1ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.landing-description {
+  max-width: 365px;
+  margin: 25px 0 27px;
+  color: #a5aabd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 27px;
+  min-width: 230px;
+  padding: 15px 17px;
+  border: 1px solid rgba(134, 224, 255, .65);
+  border-radius: 7px;
+  background: linear-gradient(110deg, #b5f0ff, #b6c7ff);
+  color: #09111f;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 28px rgba(78, 185, 255, .12);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.landing-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 38px rgba(78, 185, 255, .28);
+}
+
+.cta-arrow {
+  font-size: 18px;
+}
+
+.landing-tagline {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 38px;
+  color: #a4a9bd;
+  font-size: 11px;
+}
+
+.landing-tagline span {
+  color: #78dffb;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* The 3D orbit scene */
+
+.orbit-scene {
+  --orbit-radius: clamp(210px, 24vw, 330px);
+
+  position: relative;
+  width: 100%;
+  max-width: 790px;
+  min-width: 0;
+  justify-self: end;
+  perspective: 1100px;
+  perspective-origin: 50% 48%;
+  animation: universe-appear 1.2s ease both;
+}
+
+.orbit-stage {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1 / .95;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.orbit-stage::before {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  background: rgba(48, 89, 193, .12);
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+.orbit-stage::after {
+  content: "";
+  position: absolute;
+  width: 76%;
+  height: 76%;
+  border: 1px solid rgba(120, 171, 255, .10);
+  border-radius: 50%;
+  transform: rotateX(68deg);
+  box-shadow: 0 0 40px rgba(79, 136, 255, .06);
+  pointer-events: none;
+}
+
+.orbit-track {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: educational-orbit 38s linear infinite;
+}
+
+.orbit-scene:hover .orbit-track {
+  animation-play-state: paused;
+}
+
+.orbit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(150px, 17vw, 218px);
+  overflow: hidden;
+  border: 1px solid rgba(181, 215, 255, .28);
+  border-radius: 9px;
+  background: #101522;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .5);
+  backface-visibility: hidden;
+  transform:
+    translate(-50%, -50%)
+    rotateY(var(--angle))
+    translateZ(var(--orbit-radius));
+  transition: border-color .3s, box-shadow .3s;
+}
+
+.orbit-card:hover {
+  border-color: rgba(128, 225, 255, .9);
+  box-shadow: 0 0 32px rgba(77, 178, 255, .25);
+}
+
+.orbit-card-image {
+  position: relative;
+  height: clamp(115px, 14vw, 180px);
+  overflow: hidden;
+  background: #131b2b;
+}
+
+.orbit-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .83;
+  transition: transform .5s, opacity .4s;
+}
+
+.orbit-card:hover .orbit-card-image img {
+  transform: scale(1.07);
+  opacity: 1;
+}
+
+.orbit-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(4, 7, 16, .6));
+  pointer-events: none;
+}
+
+.orbit-card-number {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.orbit-card-info {
+  min-height: 69px;
+  padding: 12px 13px 14px;
+}
+
+.orbit-card-info > span {
+  color: #82dfff;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.orbit-card-info h2 {
+  margin: 7px 0 0;
+  color: #f4f6ff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.orbit-caption {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #a1a9c0;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.orbit-caption-top {
+  margin: 3px 0 -6px;
+}
+
+.orbit-caption-bottom {
+  margin: -5px 0 0;
+  flex-wrap: wrap;
+}
+
+.orbit-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b9dff;
+  box-shadow: 0 0 12px #8b9dff;
+}
+
+.orbit-caption-divider {
+  color: #6476c8;
+}
+
+.landing-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 57px;
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, .075);
+  font-size: 8px;
+  text-align: center;
+}
+
+.footer-line {
+  width: 45px;
+  height: 1px;
+  background: linear-gradient(90deg, #68dfff, #8b88ff);
+}
+
+@keyframes educational-orbit {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes copy-appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes universe-appear {
+  from {
+    opacity: 0;
+    transform: translateX(25px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (min-width: 1500px) {
+  .orbit-scene {
+    --orbit-radius: 330px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .landing-hero {
+    grid-template-columns: .8fr 1.2fr;
+    padding-right: 3%;
+    padding-left: 4%;
+  }
+
+  .landing-copy h1 {
+    font-size: clamp(48px, 6.5vw, 70px);
+    letter-spacing: -3.5px;
+  }
+
+  .orbit-scene {
+    --orbit-radius: clamp(185px, 23vw, 235px);
+  }
+
+  .orbit-card {
+    width: clamp(145px, 17vw, 175px);
+  }
+
+  .orbit-card-image {
+    height: 125px;
+  }
+
+  .orbit-card-info {
+    min-height: 65px;
+    padding: 10px;
+  }
+
+  .orbit-caption {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-header {
+    min-height: 72px;
+    padding: 14px 5%;
+  }
+
+  .landing-header-note {
+    display: none;
+  }
+
+  .landing-logo {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .logo-symbol {
+    width: 31px;
+    height: 31px;
+  }
+
+  .header-enter {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .landing-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    min-height: auto;
+    padding: 38px 6% 24px;
+  }
+
+  .landing-copy {
+    padding: 0;
+  }
+
+  .eyebrow {
+    margin-bottom: 19px;
+  }
+
+  .landing-copy h1 {
+    font-size: clamp(56px, 12.5vw, 78px);
+    letter-spacing: -3px;
+  }
+
+  .landing-description {
+    max-width: 450px;
+    margin: 19px 0 22px;
+    font-size: 13px;
+  }
+
+  .landing-tagline {
+    margin-top: 23px;
+  }
+
+  .orbit-scene {
+    --orbit-radius: clamp(150px, 43vw, 205px);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    perspective: 850px;
+  }
+
+  .orbit-stage {
+    aspect-ratio: 1 / 1;
+  }
+
+  .orbit-card {
+    width: clamp(125px, 35vw, 165px);
+    border-radius: 7px;
+  }
+
+  .orbit-card-image {
+    height: clamp(95px, 27vw, 125px);
+  }
+
+  .orbit-card-info {
+    min-height: 59px;
+    padding: 9px;
+  }
+
+  .orbit-card-info > span {
+    font-size: 7px;
+  }
+
+  .orbit-card-info h2 {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+
+  .orbit-caption {
+    font-size: 7px;
+  }
+
+  .orbit-caption-top {
+    margin-bottom: -2px;
+  }
+
+  .orbit-caption-bottom {
+    margin-top: -2px;
+  }
+
+  .landing-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .landing-copy h1 {
+    font-size: 53px;
+  }
+
+  .orbit-scene {
+    --orbit-radius: 143px;
+  }
+
+  .orbit-card {
+    width: 120px;
+  }
+
+  .orbit-card-image {
+    height: 90px;
+  }
+
+  .orbit-card-info h2 {
+    font-size: 9px;
+  }
+
+  .orbit-caption-bottom {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-page *,
+  .landing-page *::before,
+  .landing-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
